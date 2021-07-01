@@ -20,7 +20,7 @@
 		function setWorking(id, success, message){
 			var li = document.querySelector('#'+id);
 			var span = li.querySelector('span');
-			span.innerText = success ? 'success' : message;
+			span.innerText = success ? 'success' : message || 'error';
 			li.className = success ? 'success' : 'error';
 		}
 		function testImage(id, url){
@@ -35,9 +35,9 @@
 				if (code == e.status)
 					setWorking(id, true);
 				else
-					setWorking(id, false, JSON.stringify(e));
+					setWorking(id, false, e);
 			}).catch(function(e){
-				setWorking(id, false, JSON.stringify(e))
+				setWorking(id, false, e)
 			})
 		}
 		testImage('sqdashboard', 'https://sqdashboard.com/favicon.ico?' +Math.random());
