@@ -34,8 +34,9 @@
     }
       
     function test(){
+      document.querySelector('pre').innerText = 'Testing...';
       getLocation().then(function(l){
-        document.querySelector('pre').innerText = JSON.stringify(l)
+        document.querySelector('pre').innerText = 'Success:\n\n' + JSON.stringify(l)
       }).catch(function(e){
         document.querySelector('pre').innerText = 'Error:\n\n' + JSON.stringify(e)
       })
