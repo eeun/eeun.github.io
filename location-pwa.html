@@ -35,15 +35,16 @@
       
     function test(){
       getLocation().then(function(l){
-        document.querySelector('p').innerText = JSON.stringify(l)
+        document.querySelector('pre').innerText = JSON.stringify(l)
       }).catch(function(e){
-        document.querySelector('p').innerText = 'Error:\n\n' + JSON.stringify(e)
+        document.querySelector('pre').innerText = 'Error:\n\n' + JSON.stringify(e)
       })
     }
   </script>
 </head>
 <body>
-  <pre></pre>
   <button onclick="test()">test</button>
+  <hr>
+  <pre></pre>
 </body>
 </html>
