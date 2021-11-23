@@ -3,6 +3,7 @@
   <title>Location PWA Test</title>
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-title" content="Location PWA">
+  <link rel="manifest" href="/manifest.json" />
   
   <script type="text/javascript">
     function getLocation () {
@@ -13,14 +14,14 @@
           const wait = setTimeout(() => {
             clearTimeout(wait)
             reject(new Error('Location has timed out'))
-          }, 4000)
+          }, 9000)
         }))
       }
 
       const getCurrentPositionPromise = new Promise((resolve, reject) => {
         if ('geolocation' in navigator) {
           navigator.geolocation.getCurrentPosition(resolve, reject, {
-            timeout: 5000,
+            timeout: 10000,
             maximumAge: 2000,
             enableHighAccuracy: false
           })
