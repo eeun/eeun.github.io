@@ -1,10 +1,16 @@
 {
     "name": "Location PWA Test",
-    "short_name": "PWA Test",
+    "short_name": "Location PWA",
     "theme_color": "#666666",
     "background_color": "#ffffff",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
-    "start_url": "/location-pwa.html"
+    "start_url": "/location-pwa.html",
+    "icons": [{
+            "src": "/test.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        }    
+    ]
 }
